@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow');
+
+.main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: rgb(30, 30, 30);
+    color: rgb(30, 30, 30);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.carrousel-container{
+    height: 600px;
+    perspective: 3000px;
+}
+
+.carrousel-button{
+    width: 200px;
+    min-width: 100px;
+    height: 800px;
+    min-height: 100px;
+    background-color: transparent;
+    z-index: 10;
+    transition: .1s ease;
+    font-size: 10em;
+    border-radius: 100px;
+    user-select: none;
+    color: crimson;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.4);
+}
+
+.carrousel-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    text-shadow: 0px 10px 3px rgba(0, 0, 0, 0.4);
+    /*box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);*/
+}
+
+.carrousel-button:active{
+    transform: scale(1);
+}
+
+.carrousel{
+    position: relative;
+    width: 500px;
+    height: 100%;
+    transform-style: preserve-3d;
+    
+    transition: .8s cubic-bezier(0.44, 0.1, 0, 1.52);
+    margin: 0 auto;
+}
+
+.carrousel-item{
+    position: absolute;
+    height: 100%;
+    width: 400px;
+    left: 50px;
+    display: block;
+    backface-visibility: hidden;
+    transform-origin: center center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+    background-color: rgb(30, 30, 30);
+    transition: 1s ease;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.carrousel-item:hover{
+}
+
+.carrousel-item-detailed{
+    background-color: white;
+}
+
+
+.carrousel-item-poster{
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    filter: grayscale(20%);
+    transition: .3s ease;
+}
+
+.carrousel-item-poster:hover{
+    filter: grayscale(0%);
+}
+
+.carrousel-item-picture{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    transition: 1s ease;
+}
+
+.carrousel-item-picture-detailed{
+    height: 10%;
+}
+
+.carrousel-item-picture-tip{
+    content: 'Click to view details';
+    position: absolute;
+    bottom: 12px;
+    right: 0px;
+    color: white;
+    font-size: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 1px 1px 5px black;
+    opacity: 0;
+    margin: 10px;
+    margin-bottom: -30px;
+    transition: .3s ease;
+    pointer-events: none;
+}
+
+.carrousel-item-picture:hover ~ .carrousel-item-picture-tip{
+    opacity: 1;
+    margin-bottom: 0px;
+}
+
+.carrousel-item-picture-tip-static{
+    opacity: 1;
+    margin-bottom: 0px;
+}
+
+.carrousel-item-picture:hover{
+    cursor: pointer;
+}
+
+.carrousel-item-detail{
+    opacity: 0;
+    transition: 1s ease;
+    overflow-y: scroll;
+    max-height: 90%;
+}
+
+.carrousel-item-detail::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.carrousel-item-detail::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.carrousel-item-detail::-webkit-scrollbar-thumb
+{
+	background-color: crimson;
+}
+
+.carrousel-item-detail-visible{
+    opacity: 1;
+}
+
+.carrousel-item-title{
+    width: 100%;
+    padding: 10px;
+    font-size: 3em;
+    color:crimson;
+    text-align: center;
+}
+
+.carrousel-item-runtime{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.carrousel-item-summary{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.carrousel-item-title::selection, .carrousel-item-runtime::selection , .carrousel-item-summary::selection, .carrousel-item-trivia-get-it-on::selection {
+    background: crimson;
+    color: white;
+}
+
+.carrousel-item-trailer{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carrousel-item-trivia{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+}
+
+.carrousel-item-trivia-item{
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+.carrousel-item-trivia-item::selection{
+    background: white;
+    color: crimson;
+}
+
+.carrousel-item-trivia-item:nth-last-child(-n+1) {
+    border-bottom: none;
+}
+
+.carrousel-item-trivia-tickets{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100px;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: .1s ease;
+    user-select: none;
+}
+
+.carrousel-item-trivia-tickets:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.carrousel-item-trivia-tickets:active{
+    transform: scale(1);
+}
+
+.carrousel-item-trivia-get-it-on{
+    min-height: 50px;
+    font-size: 1.5em;
+}
+
+.carrousel-item-trivia-stores{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.carrousel-item-trivia-stores-item{
+    width: 50px;
+    height: 50px;
+    font-size: 2.5em;
+}
+
+.carrousel-item-trivia-stores-item:hover{
+    transform: scale(1.1);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.carrousel-item-trivia-stores-item:active{
+    transform: scale(1);
+    text-shadow: none;
+}
